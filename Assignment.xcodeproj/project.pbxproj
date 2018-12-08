@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1A9FCBC221BBF1D700A124B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC121BBF1D700A124B6 /* AppDelegate.swift */; };
-		1A9FCBC421BBF1D700A124B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC321BBF1D700A124B6 /* ViewController.swift */; };
+		1A9FCBC421BBF1D700A124B6 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC321BBF1D700A124B6 /* NewPostViewController.swift */; };
 		1A9FCBC721BBF1D700A124B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC521BBF1D700A124B6 /* Main.storyboard */; };
 		1A9FCBC921BBF1D800A124B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC821BBF1D800A124B6 /* Assets.xcassets */; };
 		1A9FCBCC21BBF1D800A124B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCBCA21BBF1D800A124B6 /* LaunchScreen.storyboard */; };
+		1A9FCBDA21BBF4D100A124B6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A9FCBBE21BBF1D700A124B6 /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9FCBC121BBF1D700A124B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A9FCBC321BBF1D700A124B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1A9FCBC321BBF1D700A124B6 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		1A9FCBC621BBF1D700A124B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A9FCBC821BBF1D800A124B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A9FCBCB21BBF1D800A124B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A9FCBCD21BBF1D800A124B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,63 @@
 		1A9FCBC021BBF1D700A124B6 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				1A9FCBC121BBF1D700A124B6 /* AppDelegate.swift */,
-				1A9FCBC321BBF1D700A124B6 /* ViewController.swift */,
-				1A9FCBC521BBF1D700A124B6 /* Main.storyboard */,
-				1A9FCBC821BBF1D800A124B6 /* Assets.xcassets */,
-				1A9FCBCA21BBF1D800A124B6 /* LaunchScreen.storyboard */,
-				1A9FCBCD21BBF1D800A124B6 /* Info.plist */,
+				1A9FCBD821BBF4B000A124B6 /* TableView Cells */,
+				1A9FCBD721BBF23200A124B6 /* Supported Files */,
+				1A9FCBD621BBF21E00A124B6 /* Assets */,
+				1A9FCBD521BBF20C00A124B6 /* Storyboards */,
+				1A9FCBD421BBF1FD00A124B6 /* View Controllers */,
+				1A9FCBD321BBF1E400A124B6 /* App Delegate */,
 			);
 			path = Assignment;
+			sourceTree = "<group>";
+		};
+		1A9FCBD321BBF1E400A124B6 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCBC121BBF1D700A124B6 /* AppDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		1A9FCBD421BBF1FD00A124B6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCBC321BBF1D700A124B6 /* NewPostViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1A9FCBD521BBF20C00A124B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCBC521BBF1D700A124B6 /* Main.storyboard */,
+				1A9FCBCA21BBF1D800A124B6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1A9FCBD621BBF21E00A124B6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCBC821BBF1D800A124B6 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1A9FCBD721BBF23200A124B6 /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCBCD21BBF1D800A124B6 /* Info.plist */,
+			);
+			path = "Supported Files";
+			sourceTree = "<group>";
+		};
+		1A9FCBD821BBF4B000A124B6 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */,
+			);
+			path = "TableView Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9FCBC421BBF1D700A124B6 /* ViewController.swift in Sources */,
+				1A9FCBC421BBF1D700A124B6 /* NewPostViewController.swift in Sources */,
 				1A9FCBC221BBF1D700A124B6 /* AppDelegate.swift in Sources */,
+				1A9FCBDA21BBF4D100A124B6 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Assignment/Info.plist;
+				INFOPLIST_FILE = "Assignment/Supported Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Assignment/Info.plist;
+				INFOPLIST_FILE = "Assignment/Supported Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
