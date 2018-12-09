@@ -19,6 +19,7 @@ struct Identifier
 struct Nib {
     static let kPostAttachmentCell = "PostAttachmentCell"
     static let kCategoryCollCell = "CategoryCollCell"
+    static let kAttachmentPreviewCell = "AttachmentPreviewCell"
     
 }
 

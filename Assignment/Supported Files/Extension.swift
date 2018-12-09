@@ -24,7 +24,7 @@ extension UIView {
             if let color = objc_getAssociatedObject(self, &bottomLineColorAssociatedKey) as? UIColor {
                 return color
             } else {
-                return .black
+                return .lightGray
             }
         } set {
             objc_setAssociatedObject(self, &bottomLineColorAssociatedKey, newValue, .OBJC_ASSOCIATION_RETAIN)

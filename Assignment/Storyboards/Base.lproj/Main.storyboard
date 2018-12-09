@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYH-SZ-O7W" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460" y="-340.47976011994007"/>
+            <point key="canvasLocation" x="1919" y="-500"/>
         </scene>
         <!--New Post-->
         <scene sceneID="cXz-UN-ihz">
@@ -114,7 +114,7 @@
                                                     <rect key="frame" x="16" y="34.5" width="343" height="59.5"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Post Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjB-1M-88R">
-                                                            <rect key="frame" x="0.0" y="10" width="343" height="37.5"/>
+                                                            <rect key="frame" x="0.0" y="10" width="343" height="41.5"/>
                                                             <color key="textColor" red="0.1232628897" green="0.39220055939999998" blue="0.55466151239999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="organization-title"/>
@@ -123,7 +123,7 @@
                                                             </connections>
                                                         </textField>
                                                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category" translatesAutoresizingMaskIntoConstraints="NO" id="emg-hC-Qva">
-                                                            <rect key="frame" x="327" y="22" width="16" height="16"/>
+                                                            <rect key="frame" x="319" y="18" width="24" height="24"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,13 +131,13 @@
                                                         <constraint firstAttribute="trailing" secondItem="emg-hC-Qva" secondAttribute="trailing" id="Kkd-K5-uSm"/>
                                                         <constraint firstAttribute="trailing" secondItem="pjB-1M-88R" secondAttribute="trailing" id="Nl2-fG-Q48"/>
                                                         <constraint firstItem="pjB-1M-88R" firstAttribute="leading" secondItem="EWN-2F-mSJ" secondAttribute="leading" id="Wp6-rN-Ubo"/>
-                                                        <constraint firstAttribute="bottom" secondItem="pjB-1M-88R" secondAttribute="bottom" constant="12" id="XqY-8c-3kc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pjB-1M-88R" secondAttribute="bottom" constant="8" id="XqY-8c-3kc"/>
                                                         <constraint firstItem="pjB-1M-88R" firstAttribute="top" secondItem="EWN-2F-mSJ" secondAttribute="top" constant="10" id="ht8-Qg-5bf"/>
                                                         <constraint firstItem="emg-hC-Qva" firstAttribute="centerY" secondItem="EWN-2F-mSJ" secondAttribute="centerY" id="pbk-Uf-fd6"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
-                                                            <color key="value" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
                                                             <real key="value" value="0.5"/>
@@ -193,7 +193,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="168" height="73.5"/>
                                                             <subviews>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Post Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="urg-oj-uDc">
-                                                                    <rect key="frame" x="0.0" y="10" width="168" height="51.5"/>
+                                                                    <rect key="frame" x="0.0" y="10" width="168" height="55.5"/>
                                                                     <color key="textColor" red="0.1232628897" green="0.39220055939999998" blue="0.55466151239999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="organization-title"/>
@@ -208,13 +208,13 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="urg-oj-uDc" secondAttribute="trailing" id="3Ko-F1-pAj"/>
-                                                                <constraint firstAttribute="bottom" secondItem="urg-oj-uDc" secondAttribute="bottom" constant="12" id="G3M-Ln-LPb"/>
+                                                                <constraint firstAttribute="bottom" secondItem="urg-oj-uDc" secondAttribute="bottom" constant="8" id="G3M-Ln-LPb"/>
                                                                 <constraint firstItem="urg-oj-uDc" firstAttribute="top" secondItem="qED-DD-puW" secondAttribute="top" constant="10" id="JJk-x2-X7g"/>
                                                                 <constraint firstItem="urg-oj-uDc" firstAttribute="leading" secondItem="qED-DD-puW" secondAttribute="leading" id="Uuo-EZ-Q1h"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
-                                                                    <color key="value" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
                                                                     <real key="value" value="0.5"/>
@@ -225,7 +225,7 @@
                                                             <rect key="frame" x="176" y="0.0" width="168" height="73.5"/>
                                                             <subviews>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Post Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUf-LR-d3n">
-                                                                    <rect key="frame" x="0.0" y="10" width="168" height="51.5"/>
+                                                                    <rect key="frame" x="0.0" y="10" width="168" height="55.5"/>
                                                                     <color key="textColor" red="0.1232628897" green="0.39220055939999998" blue="0.55466151239999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="organization-title"/>
@@ -239,14 +239,14 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="eUf-LR-d3n" secondAttribute="bottom" constant="12" id="7ZG-0w-Dm7"/>
+                                                                <constraint firstAttribute="bottom" secondItem="eUf-LR-d3n" secondAttribute="bottom" constant="8" id="7ZG-0w-Dm7"/>
                                                                 <constraint firstItem="eUf-LR-d3n" firstAttribute="leading" secondItem="Hpr-rv-tLw" secondAttribute="leading" id="CRG-PA-hV9"/>
                                                                 <constraint firstAttribute="trailing" secondItem="eUf-LR-d3n" secondAttribute="trailing" id="h2l-Y1-U0R"/>
                                                                 <constraint firstItem="eUf-LR-d3n" firstAttribute="top" secondItem="Hpr-rv-tLw" secondAttribute="top" constant="10" id="lmP-B6-oBG"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
-                                                                    <color key="value" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
                                                                     <real key="value" value="0.5"/>
@@ -284,10 +284,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="lblFloatingFirst" destination="FQc-WH-CfE" id="8xg-E0-b4n"/>
-                                            <outlet property="lblFloatingSecond" destination="k2h-AC-IgQ" id="cUq-JU-hPn"/>
-                                            <outlet property="textFieldFirst" destination="urg-oj-uDc" id="7LO-RY-EMH"/>
-                                            <outlet property="textFieldSecond" destination="eUf-LR-d3n" id="pKZ-GS-R76"/>
+                                            <outlet property="lblFloatingRight" destination="k2h-AC-IgQ" id="mdC-ax-zX4"/>
+                                            <outlet property="lblFloatingleft" destination="FQc-WH-CfE" id="eO3-fD-ZZC"/>
+                                            <outlet property="leftTextField" destination="urg-oj-uDc" id="LrG-b6-Zuc"/>
+                                            <outlet property="rightTextField" destination="eUf-LR-d3n" id="hk3-3o-pZd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionTableCell" rowHeight="114" id="k1y-M9-Y1T" customClass="DescriptionTableCell" customModule="DummyTextField" customModuleProvider="target">
@@ -298,14 +298,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-YK-JgZ">
-                                                    <rect key="frame" x="16" y="28" width="343" height="70"/>
+                                                    <rect key="frame" x="16" y="24.5" width="343" height="73.5"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8MR-Dd-sQT" customClass="PlaceholderTextView" customModule="DummyTextField" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="10" width="343" height="48"/>
+                                                            <rect key="frame" x="0.0" y="10" width="343" height="55.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="OrB-0Y-Hdb"/>
-                                                            </constraints>
                                                             <color key="textColor" red="0.1232628897" green="0.39220055939999998" blue="0.55466151239999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -320,13 +317,13 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="8MR-Dd-sQT" secondAttribute="trailing" id="BEa-DY-RbV"/>
-                                                        <constraint firstAttribute="bottom" secondItem="8MR-Dd-sQT" secondAttribute="bottom" constant="12" id="Bu3-V3-QPs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8MR-Dd-sQT" secondAttribute="bottom" constant="8" id="Bu3-V3-QPs"/>
                                                         <constraint firstItem="8MR-Dd-sQT" firstAttribute="leading" secondItem="TbX-YK-JgZ" secondAttribute="leading" id="LZL-9t-7oB"/>
                                                         <constraint firstItem="8MR-Dd-sQT" firstAttribute="top" secondItem="TbX-YK-JgZ" secondAttribute="top" constant="10" id="fWi-2C-pxY"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
-                                                            <color key="value" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
                                                             <real key="value" value="0.5"/>
@@ -334,7 +331,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Post Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDa-Vz-kcM">
-                                                    <rect key="frame" x="16" y="10" width="93.5" height="18"/>
+                                                    <rect key="frame" x="16" y="10" width="93.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -362,6 +359,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="containerView" destination="TbX-YK-JgZ" id="qjl-0c-RCZ"/>
                                             <outlet property="lblFloating" destination="nDa-Vz-kcM" id="V4Z-aC-BNz"/>
                                             <outlet property="lblMessage" destination="gMb-vB-keC" id="6IF-X0-qAg"/>
                                             <outlet property="textViewDesc" destination="8MR-Dd-sQT" id="Zr7-m0-atf"/>
@@ -370,6 +368,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="bfp-jn-nO0" id="XnW-gq-0Lh"/>
+                                    <outlet property="delegate" destination="bfp-jn-nO0" id="U6G-b5-WmV"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -408,6 +407,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AaC-ld-ieX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1232628897" green="0.39220055939999998" blue="0.55466151239999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -424,6 +424,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="category" width="16" height="16"/>
+        <image name="category" width="24" height="24"/>
     </resources>
 </document>

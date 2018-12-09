@@ -23,6 +23,15 @@
 		1A9FCC3421BD0F0100A124B6 /* DescriptionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3121BD0F0100A124B6 /* DescriptionTableCell.swift */; };
 		1A9FCC3521BD0F0100A124B6 /* SingleElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3221BD0F0100A124B6 /* SingleElementTableViewCell.swift */; };
 		1A9FCC3721BD0FD800A124B6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3621BD0FD800A124B6 /* Extension.swift */; };
+		1A9FCC3B21BD49EC00A124B6 /* PostAttachmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3921BD49EC00A124B6 /* PostAttachmentCell.xib */; };
+		1A9FCC3C21BD49EC00A124B6 /* PostAttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3A21BD49EC00A124B6 /* PostAttachmentCell.swift */; };
+		1A9FCC3F21BD4A0900A124B6 /* AttachmentPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */; };
+		1A9FCC4021BD4A0900A124B6 /* AttachmentPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */; };
+		1A9FCC4421BD4A2B00A124B6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */; };
+		1A9FCC4521BD4A2B00A124B6 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4221BD4A2B00A124B6 /* PickerViewController.swift */; };
+		1A9FCC4621BD4A2B00A124B6 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */; };
+		1A9FCC4821BD4A4400A124B6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */; };
+		1A9FCC4B21BD646F00A124B6 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9FCC4A21BD646E00A124B6 /* CoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,15 @@
 		1A9FCC3121BD0F0100A124B6 /* DescriptionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableCell.swift; sourceTree = "<group>"; };
 		1A9FCC3221BD0F0100A124B6 /* SingleElementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleElementTableViewCell.swift; sourceTree = "<group>"; };
 		1A9FCC3621BD0FD800A124B6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1A9FCC3921BD49EC00A124B6 /* PostAttachmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostAttachmentCell.xib; sourceTree = "<group>"; };
+		1A9FCC3A21BD49EC00A124B6 /* PostAttachmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAttachmentCell.swift; sourceTree = "<group>"; };
+		1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentPreviewCell.xib; sourceTree = "<group>"; };
+		1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentPreviewCell.swift; sourceTree = "<group>"; };
+		1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		1A9FCC4221BD4A2B00A124B6 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
+		1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		1A9FCC4A21BD646E00A124B6 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9FCC4B21BD646F00A124B6 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +81,7 @@
 			children = (
 				1A9FCBC021BBF1D700A124B6 /* Assignment */,
 				1A9FCBBF21BBF1D700A124B6 /* Products */,
+				1A9FCC4921BD646D00A124B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +96,7 @@
 		1A9FCBC021BBF1D700A124B6 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCC3821BD499500A124B6 /* Post Attachments */,
 				1A9FCC2D21BD0E7E00A124B6 /* View Layout */,
 				1A9FCC2921BC67E800A124B6 /* Pickers */,
 				1A9FCC2621BC5BE200A124B6 /* Constants */,
@@ -185,6 +206,29 @@
 			path = "View Layout";
 			sourceTree = "<group>";
 		};
+		1A9FCC3821BD499500A124B6 /* Post Attachments */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */,
+				1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */,
+				1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */,
+				1A9FCC4221BD4A2B00A124B6 /* PickerViewController.swift */,
+				1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */,
+				1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */,
+				1A9FCC3A21BD49EC00A124B6 /* PostAttachmentCell.swift */,
+				1A9FCC3921BD49EC00A124B6 /* PostAttachmentCell.xib */,
+			);
+			path = "Post Attachments";
+			sourceTree = "<group>";
+		};
+		1A9FCC4921BD646D00A124B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC4A21BD646E00A124B6 /* CoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,8 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9FCC3B21BD49EC00A124B6 /* PostAttachmentCell.xib in Resources */,
 				1A9FCBCC21BBF1D800A124B6 /* LaunchScreen.storyboard in Resources */,
 				1A9FCC2521BC5B5300A124B6 /* CategoryCollCell.xib in Resources */,
+				1A9FCC3F21BD4A0900A124B6 /* AttachmentPreviewCell.xib in Resources */,
 				1A9FCBC921BBF1D800A124B6 /* Assets.xcassets in Resources */,
 				1A9FCBC721BBF1D700A124B6 /* Main.storyboard in Resources */,
 			);
@@ -257,16 +303,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9FCC4821BD4A4400A124B6 /* UIViewController+Extension.swift in Sources */,
 				1A9FCC2121BC5AFF00A124B6 /* CategoryCollCell.swift in Sources */,
 				1A9FCC1E21BC5ACB00A124B6 /* CategoryViewController.swift in Sources */,
+				1A9FCC4521BD4A2B00A124B6 /* PickerViewController.swift in Sources */,
 				1A9FCBC421BBF1D700A124B6 /* NewPostViewController.swift in Sources */,
 				1A9FCC3721BD0FD800A124B6 /* Extension.swift in Sources */,
 				1A9FCBC221BBF1D700A124B6 /* AppDelegate.swift in Sources */,
 				1A9FCC2F21BD0EBA00A124B6 /* PlaceHoldeTextView.swift in Sources */,
 				1A9FCC3521BD0F0100A124B6 /* SingleElementTableViewCell.swift in Sources */,
+				1A9FCC3C21BD49EC00A124B6 /* PostAttachmentCell.swift in Sources */,
 				1A9FCC3421BD0F0100A124B6 /* DescriptionTableCell.swift in Sources */,
 				1A9FCBDA21BBF4D100A124B6 /* PostTableViewCell.swift in Sources */,
+				1A9FCC4621BD4A2B00A124B6 /* ImagePickerDelegate.swift in Sources */,
 				1A9FCC2B21BC67FB00A124B6 /* ToolbarPickerView.swift in Sources */,
+				1A9FCC4021BD4A0900A124B6 /* AttachmentPreviewCell.swift in Sources */,
+				1A9FCC4421BD4A2B00A124B6 /* ImagePicker.swift in Sources */,
 				1A9FCC3321BD0F0100A124B6 /* DoubleElementTableViewCell.swift in Sources */,
 				1A9FCC2821BC5BFC00A124B6 /* Constants.swift in Sources */,
 			);
@@ -415,7 +467,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WS9G37P42N;
 				INFOPLIST_FILE = "Assignment/Supported Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,7 +486,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WS9G37P42N;
 				INFOPLIST_FILE = "Assignment/Supported Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

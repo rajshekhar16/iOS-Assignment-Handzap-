@@ -10,7 +10,7 @@ import UIKit
 
 protocol CategorySelectionProtocol: class
 {
-    func didSelectCategories()
+    func didSelectCategories(categoriesSelected: Int)
 }
 
 class CategoryViewController: UIViewController {
@@ -86,8 +86,12 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
     {
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollCell
         
+     
         if cell.isFlipped == false
         {
+            if self.selectionCount < 3
+            {
+                
             self.selectionCount = self.selectionCount + 1
             UIView.transition(with: cell, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 cell.isFlipped = true
@@ -95,6 +99,7 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
                 cell.contentView.backgroundColor = UIColor.init(red: 211.0/255.0, green: 244.0/255.0, blue: 255.0/255.0, alpha: 1.0)
                 cell.updateView()
             }, completion: nil)
+            }
         }
         else
         {
@@ -119,9 +124,9 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
             self.categorySelectionLabel.isHidden = false
         }
             
-        if self.selectionCount == 3
+        if self.selectionCount <= 3
         {
-            self.delegate?.didSelectCategories()
+            self.delegate?.didSelectCategories(categoriesSelected: self.selectionCount)
         }
     }
     
@@ -141,7 +146,7 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
     
     @IBAction func categorySelectionButtonTapped(sender: UIButton)
     {
-        self.delegate?.didSelectCategories()
+        self.delegate?.didSelectCategories(categoriesSelected: self.selectionCount)
     }
     
 }

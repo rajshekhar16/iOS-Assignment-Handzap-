@@ -10,11 +10,11 @@ import UIKit
 
 class DoubleElementTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lblFloatingFirst: UILabel!
-    @IBOutlet weak var textFieldFirst: UITextField!
+    @IBOutlet weak var lblFloatingleft: UILabel!
+    @IBOutlet weak var leftTextField: UITextField!
 
-    @IBOutlet weak var lblFloatingSecond: UILabel!
-    @IBOutlet weak var textFieldSecond: UITextField!
+    @IBOutlet weak var lblFloatingRight: UILabel!
+    @IBOutlet weak var rightTextField: UITextField!
     
     var inputPicker: UIPickerView?
     
@@ -65,19 +65,19 @@ extension DoubleElementTableViewCell: UITextFieldDelegate {
         picker?.dataSource = self
         picker?.delegate = self
         self.inputPicker = picker
-        self.textFieldFirst.placeholder = self.getFirstFieldPlaceHolder()
-        self.textFieldSecond.placeholder = self.getSecondFieldPlaceHolder()
+        self.leftTextField.placeholder = self.getFirstFieldPlaceHolder()
+        self.rightTextField.placeholder = self.getSecondFieldPlaceHolder()
     }
     
     private func setPlaceHoldersFor(_ textField: UITextField, WithFloatingLabelHide  hidden: Bool) {
-        if textField == self.textFieldFirst {
-            self.lblFloatingFirst.isHidden = hidden
+        if textField == self.leftTextField {
+            self.lblFloatingleft.isHidden = hidden
             let placeHolder = self.getFirstFieldPlaceHolder()
-            self.lblFloatingFirst.text = placeHolder
+            self.lblFloatingleft.text = placeHolder
         } else {
-            self.lblFloatingSecond.isHidden = hidden
+            self.lblFloatingRight.isHidden = hidden
             let placeHolder = self.getSecondFieldPlaceHolder()
-            self.lblFloatingSecond.text = placeHolder
+            self.lblFloatingRight.text = placeHolder
         }
         self.setPlaceHoldersForFields(inputPicker)
     }
@@ -102,7 +102,7 @@ extension DoubleElementTableViewCell: UITextFieldDelegate {
         var placeholderSecond = ""
         switch self.tag {
         case 3:
-            self.textFieldSecond.text = "🇮🇳 INR"
+            self.rightTextField.text = "🇮🇳 INR"
             placeholderSecond = "Country"
             break;
         case 4:
@@ -116,36 +116,36 @@ extension DoubleElementTableViewCell: UITextFieldDelegate {
     }
     
     private func setInputViews(_ textField: UITextField) {
-        if textField == self.textFieldFirst {
+        if textField == self.leftTextField {
             inputPicker?.tag = 1000
             switch self.tag {
             case 3:
-                self.textFieldFirst.inputView = nil
-                self.textFieldFirst.reloadInputViews()
-                self.textFieldFirst.keyboardType = UIKeyboardType.numberPad
+                self.leftTextField.inputView = nil
+                self.leftTextField.reloadInputViews()
+                self.leftTextField.keyboardType = UIKeyboardType.numberPad
                 break;
             case 4:
-                self.textFieldFirst.inputView = inputPicker
+                self.leftTextField.inputView = inputPicker
                 pickerArray = ["No Preference", "Fixed Budget", "Hourly Rate"]
                 break;
             default:
-                self.textFieldFirst.inputView = UIDatePicker()
+                self.leftTextField.inputView = UIDatePicker()
                 break;
             }
         } else {
             inputPicker?.tag = 1001
             switch self.tag {
             case 3:
-                self.textFieldSecond.inputView = nil
-                self.textFieldSecond.reloadInputViews()
+                self.rightTextField.inputView = nil
+                self.rightTextField.reloadInputViews()
                 break;
             case 4:
                 pickerArray = ["No Preference", "E-Payment", "Cash"]
-                self.textFieldSecond.inputView = inputPicker
+                self.rightTextField.inputView = inputPicker
                 break;
             default:
                 pickerArray = ["No Preference", "Same Day", "Multi Days", "Recurring Job"]
-                self.textFieldSecond.inputView = inputPicker
+                self.rightTextField.inputView = inputPicker
                 break;
             }
         }
@@ -172,9 +172,9 @@ extension DoubleElementTableViewCell:UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let title = pickerArray[row]
         if pickerView.tag == 1000 {
-            textFieldFirst.text = title
+            leftTextField.text = title
         } else {
-            textFieldSecond.text = title
+            rightTextField.text = title
         }
     }
 }

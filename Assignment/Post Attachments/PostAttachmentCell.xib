@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostAttachmentCell" rowHeight="99" id="KGk-i7-Jjw" customClass="PostAttachmentCell" customModule="Assignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="P7Z-pQ-ghs">
+                        <rect key="frame" x="5" y="25.5" width="353" height="66"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tfT-2h-p1E">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Attachments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjb-es-gkI">
+                        <rect key="frame" x="16" y="5" width="118" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uof-p0-cU0">
+                        <rect key="frame" x="294" y="0.0" width="64" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="V9K-fh-VvJ"/>
+                            <constraint firstAttribute="height" constant="24" id="gzD-r0-j0x"/>
+                        </constraints>
+                        <state key="normal" title="Edit"/>
+                        <connections>
+                            <action selector="editButtonTappedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h3L-MP-Mvg"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uof-p0-cU0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="88T-9b-drx"/>
+                    <constraint firstItem="zjb-es-gkI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ai4-iE-Ijg"/>
+                    <constraint firstAttribute="bottom" secondItem="P7Z-pQ-ghs" secondAttribute="bottom" constant="8" id="EsY-eW-Coc"/>
+                    <constraint firstAttribute="trailing" secondItem="uof-p0-cU0" secondAttribute="trailing" id="JZ7-5Q-EM7"/>
+                    <constraint firstAttribute="trailing" secondItem="P7Z-pQ-ghs" secondAttribute="trailing" id="TjX-Lj-OJd"/>
+                    <constraint firstItem="P7Z-pQ-ghs" firstAttribute="top" secondItem="zjb-es-gkI" secondAttribute="bottom" constant="3.5" id="cAH-qP-9e7"/>
+                    <constraint firstItem="zjb-es-gkI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="k1Q-y9-Waa"/>
+                    <constraint firstItem="P7Z-pQ-ghs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="lRw-0k-pnI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="P7Z-pQ-ghs" id="Rtb-aL-Yhp"/>
+                <outlet property="editButton" destination="uof-p0-cU0" id="2BM-1n-ULO"/>
+            </connections>
+            <point key="canvasLocation" x="83.200000000000003" y="92.203898050974516"/>
+        </tableViewCell>
+    </objects>
+</document>

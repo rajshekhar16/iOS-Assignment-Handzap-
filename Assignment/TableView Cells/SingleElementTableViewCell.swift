@@ -8,12 +8,20 @@
 
 import UIKit
 
+protocol NavCategoryProtocol: class
+{
+    func navigateToCategoryClass(textField: UITextField)
+}
+
 class SingleElementTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblFloating: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imgField: UIImageView!
+    
+    weak var navDelegate: NavCategoryProtocol?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +47,15 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             self.setPlaceHolderForFloatingLabelHide(false)
             self.lblMessage.text = "50 characters left"
+            if textField == self.textField
+            {
+                if self.tag == 2 {
+                self.resignFirstResponder()
+                self.endEditing(true)
+                self.navDelegate?.navigateToCategoryClass(textField: textField)
+                    
+                }
+            }
 
         }, completion: nil)
     }
