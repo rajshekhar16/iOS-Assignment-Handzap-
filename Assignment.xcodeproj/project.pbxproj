@@ -28,7 +28,6 @@
 		1A9FCC3F21BD4A0900A124B6 /* AttachmentPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */; };
 		1A9FCC4021BD4A0900A124B6 /* AttachmentPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */; };
 		1A9FCC4421BD4A2B00A124B6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */; };
-		1A9FCC4521BD4A2B00A124B6 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4221BD4A2B00A124B6 /* PickerViewController.swift */; };
 		1A9FCC4621BD4A2B00A124B6 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */; };
 		1A9FCC4821BD4A4400A124B6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */; };
 		1A9FCC4B21BD646F00A124B6 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9FCC4A21BD646E00A124B6 /* CoreServices.framework */; };
@@ -58,7 +57,6 @@
 		1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentPreviewCell.xib; sourceTree = "<group>"; };
 		1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentPreviewCell.swift; sourceTree = "<group>"; };
 		1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		1A9FCC4221BD4A2B00A124B6 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1A9FCC4A21BD646E00A124B6 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -209,14 +207,11 @@
 		1A9FCC3821BD499500A124B6 /* Post Attachments */ = {
 			isa = PBXGroup;
 			children = (
-				1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */,
-				1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */,
-				1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */,
-				1A9FCC4221BD4A2B00A124B6 /* PickerViewController.swift */,
-				1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */,
-				1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */,
-				1A9FCC3A21BD49EC00A124B6 /* PostAttachmentCell.swift */,
-				1A9FCC3921BD49EC00A124B6 /* PostAttachmentCell.xib */,
+				1AD281F821BDB032003C7271 /* Controllers */,
+				1AD281F721BDB01E003C7271 /* Table View Cells */,
+				1AD281F621BDB00B003C7271 /* Extension */,
+				1AD281F521BDAFE7003C7271 /* ImagePicker */,
+				1AD281F421BDAFD4003C7271 /* Nibs */,
 			);
 			path = "Post Attachments";
 			sourceTree = "<group>";
@@ -227,6 +222,48 @@
 				1A9FCC4A21BD646E00A124B6 /* CoreServices.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AD281F421BDAFD4003C7271 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC3D21BD4A0800A124B6 /* AttachmentPreviewCell.xib */,
+				1A9FCC3921BD49EC00A124B6 /* PostAttachmentCell.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		1AD281F521BDAFE7003C7271 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC4121BD4A2B00A124B6 /* ImagePicker.swift */,
+				1A9FCC4321BD4A2B00A124B6 /* ImagePickerDelegate.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		1AD281F621BDB00B003C7271 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC4721BD4A4400A124B6 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1AD281F721BDB01E003C7271 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC3E21BD4A0800A124B6 /* AttachmentPreviewCell.swift */,
+				1A9FCC3A21BD49EC00A124B6 /* PostAttachmentCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		1AD281F821BDB032003C7271 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +343,6 @@
 				1A9FCC4821BD4A4400A124B6 /* UIViewController+Extension.swift in Sources */,
 				1A9FCC2121BC5AFF00A124B6 /* CategoryCollCell.swift in Sources */,
 				1A9FCC1E21BC5ACB00A124B6 /* CategoryViewController.swift in Sources */,
-				1A9FCC4521BD4A2B00A124B6 /* PickerViewController.swift in Sources */,
 				1A9FCBC421BBF1D700A124B6 /* NewPostViewController.swift in Sources */,
 				1A9FCC3721BD0FD800A124B6 /* Extension.swift in Sources */,
 				1A9FCBC221BBF1D700A124B6 /* AppDelegate.swift in Sources */,

@@ -2,7 +2,7 @@
 //  DescriptionTableCell.swift
 //  DummyTextField
 //
-//  Created by Vivan Raghuvanshi on 08/12/18.
+//  Created by Raj Shekhar on 08/12/18.
 //  Copyright © 2018 Raj Shekhar. All rights reserved.
 //
 
@@ -93,6 +93,44 @@ class DescriptionTableCell: UITableViewCell, UITextViewDelegate {
         else {
             //perform action if required
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
+        
+        
+        let count = self.updateCharacterCount()
+        
+        let  char = text.cString(using: String.Encoding.utf8)!
+        let isBackSpace = strcmp(char, "\\b")
+        
+        if (isBackSpace == -92 && count >= 0) {
+            return true
+        }
+        
+        if count <= 0{
+            return false
+        }
+        return true
+        
+        
+    }
+    
+    
+    
+    
+    /// This function will update counter for remaining characters
+    ///
+    /// - Returns: returns an INT which holds remaining char count
+    func updateCharacterCount() -> Int {
+        
+        if let text = self.textViewDesc.text
+        {
+            let count = 500 - text.count
+            self.lblMessage.text = "\(count) characters left"
+            return count
+        }
+        return 0
+        
     }
     
 

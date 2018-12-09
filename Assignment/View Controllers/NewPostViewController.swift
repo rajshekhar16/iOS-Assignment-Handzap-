@@ -11,9 +11,9 @@ import Photos
 import CoreServices
 
 
-class NewPostViewController: UIViewController, UINavigationControllerDelegate {
+class NewPostViewController: UITableViewController, UINavigationControllerDelegate {
     
-    @IBOutlet weak var postTableView: UITableView!
+   
     @IBOutlet weak var picker:UIPickerView!
     
     var attachments = [UIImage]()
@@ -27,23 +27,29 @@ class NewPostViewController: UIViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.postTableView.register(UINib.init(nibName: Nib.kPostAttachmentCell, bundle: nil), forCellReuseIdentifier: Identifier.kPostAttachmentCell)
+         self.tableView.register(UINib.init(nibName: Nib.kPostAttachmentCell, bundle: nil), forCellReuseIdentifier: Identifier.kPostAttachmentCell)
         
-        self.postTableView.estimatedRowHeight = 80
-        self.postTableView.rowHeight = UITableView.automaticDimension
+        self.title = "New Post"
+        
+        self.tableView.keyboardDismissMode = .onDrag
+        
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableView.automaticDimension
         imagePicker.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
 
 
 }
 
-extension NewPostViewController: UITableViewDataSource,AttachmentSelectionProtocol {
+extension NewPostViewController: AttachmentSelectionProtocol {
     func openImageSelectionSheet() {
        
         let actionSheet = UIAlertController.init(title: "Select Attachment Source", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction.init(title: Text.kCamera, style: .default, handler: { _ in
             //self.openLibrary()
+            self.imagePicker.cameraAsscessRequest()
         }))
         actionSheet.addAction(UIAlertAction.init(title: Text.kPandVLibrary, style: .default, handler: { _ in
             // self.presentImagePicker(sourceType: .photoLibrary)
@@ -64,11 +70,11 @@ extension NewPostViewController: UITableViewDataSource,AttachmentSelectionProtoc
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 1 {
             if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableCell") as? DescriptionTableCell {
@@ -116,9 +122,9 @@ extension NewPostViewController: UITableViewDataSource,AttachmentSelectionProtoc
    
 }
 
-extension NewPostViewController: UITableViewDelegate {
+extension NewPostViewController {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 7
         {
             return 140.0
@@ -131,11 +137,11 @@ extension NewPostViewController: UITableViewDelegate {
 extension NewPostViewController : NavCategoryProtocol{
     
     func navigateToCategoryClass(textField: UITextField) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
         nextViewController.delegate = self
-        textField.resignFirstResponder()
+      
         self.navigationController?.pushViewController(nextViewController, animated: true)
         
         categoryTextField = textField
@@ -153,6 +159,14 @@ extension NewPostViewController : CategorySelectionProtocol{
 
 extension NewPostViewController: ImagePickerDelegate
 {
+    func imagePickerDelegate(didSelectFromCamera image: UIImage, delegatedForm: ImagePicker) {
+        self.attachments.append(image)
+        imagePicker.dismiss()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func imagePickerDelegate(didSelect image: UIImage, asset: PHAsset, delegatedForm: ImagePicker)
     {
         let image = self.getAssetThumbnail(asset: asset)
@@ -160,9 +174,10 @@ extension NewPostViewController: ImagePickerDelegate
         
         imagePicker.dismiss()
         DispatchQueue.main.async {
-            self.postTableView.reloadData()
+            self.tableView.reloadData()
         }
     }
+    
     
     func mediaPickerDelegate(didSelect mediaURL: URL, delegatedForm: ImagePicker) {
         self.captureThumbnail(withVideoURL: mediaURL, secs: 10, preferredTimeScale: 1) { (image) in
@@ -171,7 +186,7 @@ extension NewPostViewController: ImagePickerDelegate
                 self.attachments.append(image)
                 self.imagePicker.dismiss()
                 DispatchQueue.main.async {
-                    self.postTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
             

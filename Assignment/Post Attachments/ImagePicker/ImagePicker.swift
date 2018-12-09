@@ -81,7 +81,14 @@ extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDe
                     delegate?.imagePickerDelegate(didSelect: image, asset: asset,  delegatedForm: self)
                 }
                 else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                    delegate?.imagePickerDelegate(didSelect: image, asset: asset, delegatedForm: self)
+                    if picker.sourceType == UIImagePickerController.SourceType.camera {
+                        //image taken with camera
+                        delegate?.imagePickerDelegate(didSelectFromCamera: image, delegatedForm: self)
+                    }
+                    else{
+                        delegate?.imagePickerDelegate(didSelect: image, asset: asset, delegatedForm: self)
+
+                    }
                 }
                 else{
                     print("Unable to pick media")

@@ -15,6 +15,7 @@ protocol ImagePickerDelegate {
     func imagePickerDelegate(canUseCamera accessIsAllowed:Bool, delegatedForm: ImagePicker)
     func imagePickerDelegate(canUseGallery accessIsAllowed:Bool, delegatedForm: ImagePicker)
     func imagePickerDelegate(didSelect image: UIImage, asset: PHAsset, delegatedForm: ImagePicker)
+    func imagePickerDelegate(didSelectFromCamera image: UIImage, delegatedForm: ImagePicker)
     func mediaPickerDelegate(didSelect mediaURL: URL, delegatedForm: ImagePicker)
     func imagePickerDelegate(didCancel delegatedForm: ImagePicker)
 }

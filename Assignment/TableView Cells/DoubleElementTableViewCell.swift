@@ -2,7 +2,7 @@
 //  DoubleElementTableViewCell.swift
 //  DummyTextField
 //
-//  Created by Vivan Raghuvanshi on 09/12/18.
+//  Created by Raj Shekhar on 09/12/18.
 //  Copyright © 2018 Raj Shekhar. All rights reserved.
 //
 
@@ -129,7 +129,21 @@ extension DoubleElementTableViewCell: UITextFieldDelegate {
                 pickerArray = ["No Preference", "Fixed Budget", "Hourly Rate"]
                 break;
             default:
-                self.leftTextField.inputView = UIDatePicker()
+             
+                self.leftTextField.inputView = inputPicker
+                let cal = Calendar.current
+                var date = cal.startOfDay(for: Date())
+                let dateFormatter = DateFormatter()
+                
+                dateFormatter.dateFormat = "EEEE  d  yyy"
+                for _ in 1 ... 7 {
+                    pickerArray.append(dateFormatter.string(from: date))
+                    date = cal.date(byAdding: .day, value: 1, to: date)!
+                }
+              //Your New Date format as per requirement change it own
+                 //pass Date here
+             
+                print(date)
                 break;
             }
         } else {

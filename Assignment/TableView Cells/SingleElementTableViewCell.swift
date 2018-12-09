@@ -45,26 +45,26 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
-            self.setPlaceHolderForFloatingLabelHide(false)
-            self.lblMessage.text = "50 characters left"
-            if textField == self.textField
-            {
-                if self.tag == 2 {
-                self.resignFirstResponder()
-                self.endEditing(true)
-                self.navDelegate?.navigateToCategoryClass(textField: textField)
-                    
-                }
-            }
+           
+            textField.placeholder = ""
+            self.lblFloating.isHidden = false
+           // self.lblFloating.text = "Post Categories"
+           self.setInputViews(textField)
+            
 
         }, completion: nil)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        textField.endEditing(true)
         if textField.text?.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) == "" {
             UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
-                self.textField.text = nil
+                textField.resignFirstResponder()
+                // reset placeholder and floating label
                 self.setPlaceHolderForFloatingLabelHide(true)
+                
+                
                 
             }, completion: nil)
         }
@@ -73,29 +73,40 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
         }
     }
     
+
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let count = self.updateCharacterCount()
-        
-        let  char = string.cString(using: String.Encoding.utf8)!
-        let isBackSpace = strcmp(char, "\\b")
-        
-        if (isBackSpace == -92 && count >= 0) {
-             return true
+        if textField == self.textField
+        {
+            if self.tag == 0 {
+                let count = self.updateCharacterCount()
+                
+                let  char = string.cString(using: String.Encoding.utf8)!
+                let isBackSpace = strcmp(char, "\\b")
+                
+                if (isBackSpace == -92 && count >= 0) {
+                    return true
+                }
+                
+                if count <= 0{
+                    return false
+                }
+                return true
+                
+            }
         }
-        
-        if count <= 0{
-            return false
-        }
-        
-        
         return true
+    
     }
     
     
     
-    func updateCharacterCount() -> Int {
+    /// This function will update counter for remaining characters
+    ///
+    /// - Returns: returns an INT which holds remaining char count
+    private func updateCharacterCount() -> Int {
         
         if let text = self.textField.text
         {
@@ -105,6 +116,36 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
         }
         return 0
         
+    }
+    
+
+    
+
+    
+    
+    private func setInputViews(_ textField: UITextField) {
+        
+        if textField == self.textField
+        {
+            switch self.tag {
+            case 2:
+                
+                self.endEditing(true)
+                //textField.inputView = UIDatePicker()
+                
+                self.navDelegate?.navigateToCategoryClass(textField: textField)
+
+                
+              
+               // textField.endEditing(true)
+
+                break;
+                
+            default:
+                break;
+            }
+            
+        }
     }
     
     private func setPlaceHolderForFloatingLabelHide(_ hidden: Bool) {

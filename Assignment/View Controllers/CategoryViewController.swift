@@ -35,8 +35,17 @@ class CategoryViewController: UIViewController {
         self.categoriesCV.register(UINib.init(nibName: Nib.kCategoryCollCell, bundle: nil), forCellWithReuseIdentifier: Identifier.kCategoryCollCell)
         
         self.categorySelectionLabel.text = ""
+        self.title = "Post Categories"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(addTapped))
+
         self.createGradientLayer()
         
+    }
+    
+    @objc func addTapped(){
+        self.delegate?.didSelectCategories(categoriesSelected: self.selectionCount)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -124,10 +133,7 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
             self.categorySelectionLabel.isHidden = false
         }
             
-        if self.selectionCount <= 3
-        {
-            self.delegate?.didSelectCategories(categoriesSelected: self.selectionCount)
-        }
+   
     }
     
     func createGradientLayer()
