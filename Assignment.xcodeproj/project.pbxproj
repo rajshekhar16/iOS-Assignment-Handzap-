@@ -18,6 +18,11 @@
 		1A9FCC2521BC5B5300A124B6 /* CategoryCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCC2421BC5B5200A124B6 /* CategoryCollCell.xib */; };
 		1A9FCC2821BC5BFC00A124B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC2721BC5BFC00A124B6 /* Constants.swift */; };
 		1A9FCC2B21BC67FB00A124B6 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC2A21BC67FA00A124B6 /* ToolbarPickerView.swift */; };
+		1A9FCC2F21BD0EBA00A124B6 /* PlaceHoldeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC2E21BD0EBA00A124B6 /* PlaceHoldeTextView.swift */; };
+		1A9FCC3321BD0F0100A124B6 /* DoubleElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3021BD0F0000A124B6 /* DoubleElementTableViewCell.swift */; };
+		1A9FCC3421BD0F0100A124B6 /* DescriptionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3121BD0F0100A124B6 /* DescriptionTableCell.swift */; };
+		1A9FCC3521BD0F0100A124B6 /* SingleElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3221BD0F0100A124B6 /* SingleElementTableViewCell.swift */; };
+		1A9FCC3721BD0FD800A124B6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC3621BD0FD800A124B6 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		1A9FCC2421BC5B5200A124B6 /* CategoryCollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollCell.xib; sourceTree = "<group>"; };
 		1A9FCC2721BC5BFC00A124B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1A9FCC2A21BC67FA00A124B6 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		1A9FCC2E21BD0EBA00A124B6 /* PlaceHoldeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHoldeTextView.swift; sourceTree = "<group>"; };
+		1A9FCC3021BD0F0000A124B6 /* DoubleElementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleElementTableViewCell.swift; sourceTree = "<group>"; };
+		1A9FCC3121BD0F0100A124B6 /* DescriptionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableCell.swift; sourceTree = "<group>"; };
+		1A9FCC3221BD0F0100A124B6 /* SingleElementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleElementTableViewCell.swift; sourceTree = "<group>"; };
+		1A9FCC3621BD0FD800A124B6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,7 @@
 		1A9FCBC021BBF1D700A124B6 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCC2D21BD0E7E00A124B6 /* View Layout */,
 				1A9FCC2921BC67E800A124B6 /* Pickers */,
 				1A9FCC2621BC5BE200A124B6 /* Constants */,
 				1A9FCC1F21BC5AD400A124B6 /* CollectionView Cells */,
@@ -116,6 +127,7 @@
 		1A9FCBD721BBF23200A124B6 /* Supported Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCC3621BD0FD800A124B6 /* Extension.swift */,
 				1A9FCBCD21BBF1D800A124B6 /* Info.plist */,
 			);
 			path = "Supported Files";
@@ -124,6 +136,9 @@
 		1A9FCBD821BBF4B000A124B6 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCC3121BD0F0100A124B6 /* DescriptionTableCell.swift */,
+				1A9FCC3021BD0F0000A124B6 /* DoubleElementTableViewCell.swift */,
+				1A9FCC3221BD0F0100A124B6 /* SingleElementTableViewCell.swift */,
 				1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */,
 			);
 			path = "TableView Cells";
@@ -160,6 +175,14 @@
 				1A9FCC2A21BC67FA00A124B6 /* ToolbarPickerView.swift */,
 			);
 			path = Pickers;
+			sourceTree = "<group>";
+		};
+		1A9FCC2D21BD0E7E00A124B6 /* View Layout */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCC2E21BD0EBA00A124B6 /* PlaceHoldeTextView.swift */,
+			);
+			path = "View Layout";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,9 +260,14 @@
 				1A9FCC2121BC5AFF00A124B6 /* CategoryCollCell.swift in Sources */,
 				1A9FCC1E21BC5ACB00A124B6 /* CategoryViewController.swift in Sources */,
 				1A9FCBC421BBF1D700A124B6 /* NewPostViewController.swift in Sources */,
+				1A9FCC3721BD0FD800A124B6 /* Extension.swift in Sources */,
 				1A9FCBC221BBF1D700A124B6 /* AppDelegate.swift in Sources */,
+				1A9FCC2F21BD0EBA00A124B6 /* PlaceHoldeTextView.swift in Sources */,
+				1A9FCC3521BD0F0100A124B6 /* SingleElementTableViewCell.swift in Sources */,
+				1A9FCC3421BD0F0100A124B6 /* DescriptionTableCell.swift in Sources */,
 				1A9FCBDA21BBF4D100A124B6 /* PostTableViewCell.swift in Sources */,
 				1A9FCC2B21BC67FB00A124B6 /* ToolbarPickerView.swift in Sources */,
+				1A9FCC3321BD0F0100A124B6 /* DoubleElementTableViewCell.swift in Sources */,
 				1A9FCC2821BC5BFC00A124B6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
