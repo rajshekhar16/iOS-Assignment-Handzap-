@@ -16,6 +16,10 @@ class DoubleElementTableViewCell: UITableViewCell {
     @IBOutlet weak var lblFloatingRight: UILabel!
     @IBOutlet weak var rightTextField: UITextField!
     
+    @IBOutlet weak var leftContainerView: UIView!
+    @IBOutlet weak var rightContainerView: UIView!
+
+    
     var inputPicker: UIPickerView?
     
     var pickerArray = [String]() {
@@ -168,6 +172,18 @@ extension DoubleElementTableViewCell: UITextFieldDelegate {
             self.setPlaceHoldersFor(textField, WithFloatingLabelHide: false)
             self.setInputViews(textField)
         }, completion: nil)
+        
+        if textField == leftTextField
+        {
+           
+                self.leftContainerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+                self.leftContainerView.addBottomBorderWithColor(color: UIColor(red: 39.0/255.0, green: 108.0/255.0, blue: 131.0/255.0, alpha: 1.0), width: 0.5)
+         
+        }
+        else{
+            self.rightContainerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+            self.rightContainerView.addBottomBorderWithColor(color: UIColor(red: 39.0/255.0, green: 108.0/255.0, blue: 131.0/255.0, alpha: 1.0), width: 0.5)
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -180,7 +196,21 @@ extension DoubleElementTableViewCell: UITextFieldDelegate {
         else {
             //perform action if required
         }
+        if textField == leftTextField
+        {
+     
+            self.leftContainerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+            self.leftContainerView.addBottomBorderWithColor(color: .lightGray , width: 0.5)
+    
+        }
+        else{
+            self.rightContainerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+            self.rightContainerView.addBottomBorderWithColor(color: .lightGray , width: 0.5)
+        }
     }
+    
+    
+   
     
     
 }

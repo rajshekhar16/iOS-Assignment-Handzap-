@@ -19,6 +19,8 @@ class SingleElementTableViewCell: UITableViewCell {
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imgField: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+    
     
     weak var navDelegate: NavCategoryProtocol?
 
@@ -165,15 +167,24 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        self.containerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+        
+
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
            
             textField.placeholder = ""
             self.lblFloating.isHidden = false
             self.lblFloating.text = "Post Categories"
+            
+            
+
            //self.setInputViews(textField)
             
 
         }, completion: nil)
+        
+        self.containerView.addBottomBorderWithColor(color: UIColor(red: 39.0/255.0, green: 108.0/255.0, blue: 131.0/255.0, alpha: 1.0), width: 0.5)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -192,6 +203,8 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
         else {
             //perform action if required
         }
+        self.containerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+        self.containerView.addBottomBorderWithColor(color: .lightGray, width: 0.5)
     }
     
 

@@ -103,6 +103,9 @@ extension DescriptionTableCell: UITextViewDelegate{
             self.lblFloating.text = Text.kPostDescription
             
         }, completion: nil)
+        
+        self.containerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+            self.containerView.addBottomBorderWithColor(color: UIColor(red: 39.0/255.0, green: 108.0/255.0, blue: 131.0/255.0, alpha: 1.0), width: 0.5)
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -117,6 +120,9 @@ extension DescriptionTableCell: UITextViewDelegate{
         else {
             //perform action if required
         }
+        
+        self.containerView.removePreviouslyAddedLayer(name: "bottomBorderLayer")
+        self.containerView.addBottomBorderWithColor(color: .lightGray, width: 0.5)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
