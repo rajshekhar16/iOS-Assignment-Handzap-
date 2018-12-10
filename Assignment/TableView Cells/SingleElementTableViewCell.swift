@@ -144,13 +144,33 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
         return false
     }
     
+    //Control KeyBoard While User Click on Category TextField
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
+    {
+        if textField == self.textField
+        {
+            switch self.tag {
+            case 2:
+                self.lblFloating.isHidden = false
+                self.textField.resignFirstResponder()
+                self.navDelegate?.navigateToCategoryClass(textField: textField)
+                return false //KeyBoard Will Not Open
+                
+            default:
+                break;
+            }
+        }
+        
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
            
             textField.placeholder = ""
             self.lblFloating.isHidden = false
-           // self.lblFloating.text = "Post Categories"
-           self.setInputViews(textField)
+            self.lblFloating.text = "Post Categories"
+           //self.setInputViews(textField)
             
 
         }, completion: nil)
