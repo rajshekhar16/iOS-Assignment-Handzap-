@@ -40,10 +40,20 @@ class SingleElementTableViewCell: UITableViewCell {
     /// This function will update counter for remaining characters
     ///
     /// - Returns: returns an INT which holds remaining char count
-    private func updateCharacterCount() -> Int {
+ 
+    private func updateCharacterCount(newChar : String?) -> Int {
         
-        if let text = self.textField.text
+        if var text = self.textField.text
         {
+            if newChar == nil {
+                
+                if text.count >= 1 {
+                    text = String(text.prefix(text.count - 1))
+                }
+            }
+            else {
+                text = "\(text)\(newChar!)"
+            }
             let count = 50 - text.count
             self.lblMessage.text = "\(count) characters left"
             return count
@@ -51,6 +61,7 @@ class SingleElementTableViewCell: UITableViewCell {
         return 0
         
     }
+
     
     
     
@@ -171,13 +182,12 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
         if textField == self.textField
         {
             if self.tag == 0 {
-                let count = self.updateCharacterCount()
-                
                 
                 // Below code is to check whther backspace is tapped
                 let  char = string.cString(using: String.Encoding.utf8)!
                 let isBackSpace = strcmp(char, "\\b")
                 
+                let count = self.updateCharacterCount(newChar: (isBackSpace == -92) ? nil : string)
                 if (isBackSpace == -92 && count >= 0) {
                     return true
                 }
@@ -190,7 +200,7 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
             }
         }
         return true
-    
+        
     }
     
 

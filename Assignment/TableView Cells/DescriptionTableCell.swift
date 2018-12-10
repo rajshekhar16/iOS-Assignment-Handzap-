@@ -32,16 +32,24 @@ class DescriptionTableCell: UITableViewCell  {
     /// This function will update counter for remaining characters
     ///
     /// - Returns: returns an INT which holds remaining char count
-    func updateCharacterCount() -> Int {
+    func updateCharacterCount(newChar : String?) -> Int {
         
-        if let text = self.textViewDesc.text
+        if var text = self.textViewDesc.text
         {
+            if newChar == nil {
+                
+                if text.count >= 1 {
+                    text = String(text.prefix(text.count - 1))
+                }
+            }
+            else {
+                text = "\(text)\(newChar!)"
+            }
             let count = 500 - text.count
             self.lblMessage.text = "\(count) characters left"
             return count
         }
         return 0
-        
     }
     
 
@@ -114,12 +122,11 @@ extension DescriptionTableCell: UITextViewDelegate{
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
         
         
-        let count = self.updateCharacterCount()
-        
         // To check whether backspace is tapped
         let  char = text.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
         
+        let count = self.updateCharacterCount(newChar: (isBackSpace == -92) ? nil : text)
         if (isBackSpace == -92 && count >= 0) {
             return true
         }
