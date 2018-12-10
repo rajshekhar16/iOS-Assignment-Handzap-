@@ -102,6 +102,7 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
             {
                 
             self.selectionCount = self.selectionCount + 1
+            // This will flip collection view cell
             UIView.transition(with: cell, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 cell.isFlipped = true
                 cell.categoryImageView.isHidden = true
@@ -136,6 +137,7 @@ extension CategoryViewController:UICollectionViewDataSource,UICollectionViewDele
    
     }
     
+    // Function to add gradient color
     func createGradientLayer()
     {
         let gradientLayer = CAGradientLayer()

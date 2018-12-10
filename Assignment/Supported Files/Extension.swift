@@ -103,6 +103,7 @@ extension UIView {
             }
         }
     }
+   
     func addTopBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.name = "topBorderLayer"
@@ -161,6 +162,7 @@ extension UIView {
 }
 
 extension UITextField {
+   
     @IBInspectable var doneAccessory: Bool{
         get{
             return self.doneAccessory

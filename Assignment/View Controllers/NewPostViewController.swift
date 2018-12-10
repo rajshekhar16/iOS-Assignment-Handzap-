@@ -29,47 +29,26 @@ class NewPostViewController: UITableViewController, UINavigationControllerDelega
         super.viewDidLoad()
          self.tableView.register(UINib.init(nibName: Nib.kPostAttachmentCell, bundle: nil), forCellReuseIdentifier: Identifier.kPostAttachmentCell)
         
-        self.title = "New Post"
+        self.title = Text.kNewPostTitle
         
         self.tableView.keyboardDismissMode = .onDrag
         
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableView.automaticDimension
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(savePost))
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        
+
         imagePicker.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-
-
-}
-
-extension NewPostViewController: AttachmentSelectionProtocol {
-    func openImageSelectionSheet() {
-       
-        let actionSheet = UIAlertController.init(title: "Select Attachment Source", message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction.init(title: Text.kCamera, style: .default, handler: { _ in
-            //self.openLibrary()
-            self.imagePicker.cameraAsscessRequest()
-        }))
-        actionSheet.addAction(UIAlertAction.init(title: Text.kPandVLibrary, style: .default, handler: { _ in
-            // self.presentImagePicker(sourceType: .photoLibrary)
-            self.imagePicker.galleryAsscessRequest()
-        }))
-        actionSheet.addAction(UIAlertAction.init(title: Text.kDocument, style: .default, handler: { _ in
-            self.showAlert(message: "\(Text.kDocument) is in Progress")
-        }))
-        actionSheet.addAction(UIAlertAction.init(title: Text.kCancel, style: .cancel, handler: { (_) in
-            
-        }))
-        
-        self.present(actionSheet, animated: true, completion: nil)
+    @objc func savePost()
+    {
+        // add code to save post
     }
-    
-    func attachmentEditButtonTapped() {
-        // NEED TO CODE
-    }
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
     }
@@ -77,14 +56,14 @@ extension NewPostViewController: AttachmentSelectionProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 1 {
-            if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableCell") as? DescriptionTableCell {
+            if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: Identifier.kDescriptionTableCell) as? DescriptionTableCell {
                 descriptionCell.textViewDesc.isScrollEnabled = false
                 descriptionCell.textViewDesc.translatesAutoresizingMaskIntoConstraints = false
                 descriptionCell.tag = indexPath.row
                 return descriptionCell
             }
         } else if indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 6 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "DoubleElementTableViewCell", for: indexPath) as? DoubleElementTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.kDoubleElementTableViewCell, for: indexPath) as? DoubleElementTableViewCell {
                 cell.tag = indexPath.row
                 cell.setPlaceHoldersForFields(picker)
                 return cell
@@ -108,18 +87,50 @@ extension NewPostViewController: AttachmentSelectionProtocol {
             return cell
         }
         else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "SingleElementTableViewCell", for: indexPath) as? SingleElementTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.kSingleElementTableViewCell, for: indexPath) as? SingleElementTableViewCell {
                 cell.tag = indexPath.row
                 cell.setPlaceHoldersForFields()
                 cell.navDelegate = self
-               
+                
                 return cell
             }
         }
         return UITableViewCell()
     }
     
+
+
+}
+
+// MARK: ATTAchment protocol methods
+
+extension NewPostViewController: AttachmentSelectionProtocol {
    
+    func attachmentEditButtonTapped() {
+        
+    }
+    
+    func openImageSelectionSheet() {
+       
+        let actionSheet = UIAlertController.init(title: Text.kSelectAttachmentSource, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction.init(title: Text.kCamera, style: .default, handler: { _ in
+            //self.openLibrary()
+            self.imagePicker.cameraAsscessRequest()
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: Text.kPandVLibrary, style: .default, handler: { _ in
+            // self.presentImagePicker(sourceType: .photoLibrary)
+            self.imagePicker.galleryAsscessRequest()
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: Text.kDocument, style: .default, handler: { _ in
+            self.showAlert(message: "\(Text.kDocument) is in Progress")
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: Text.kCancel, style: .cancel, handler: { (_) in
+            
+        }))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
 }
 
 extension NewPostViewController {
@@ -139,7 +150,7 @@ extension NewPostViewController : NavCategoryProtocol{
     func navigateToCategoryClass(textField: UITextField) {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: Identifier.kCategoryViewController) as! CategoryViewController
         nextViewController.delegate = self
       
         self.navigationController?.pushViewController(nextViewController, animated: true)
@@ -156,6 +167,8 @@ extension NewPostViewController : CategorySelectionProtocol{
         categoryTextField?.text = "\(categoriesSelected) Categories Selected"
     }
 }
+
+// MARK: Delegates of ImagePicker
 
 extension NewPostViewController: ImagePickerDelegate
 {

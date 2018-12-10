@@ -19,6 +19,11 @@ extension UIViewController
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    /// To get thumbnail from phasset
+    ///
+    /// - Parameter asset: reference of PHAset
+    /// - Returns: Thumbnail of original image
     func getAssetThumbnail(asset: PHAsset) -> UIImage {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()

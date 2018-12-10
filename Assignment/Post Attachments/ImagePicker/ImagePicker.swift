@@ -29,6 +29,7 @@ class ImagePicker: NSObject {
 
 extension ImagePicker {
     
+    // Function to access request permission for camera
     func cameraAsscessRequest() {
         if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  AVAuthorizationStatus.authorized {
             delegate?.imagePickerDelegate(canUseCamera: true, delegatedForm: self)
@@ -39,6 +40,7 @@ extension ImagePicker {
         }
     }
     
+    // Function to access request permission for gallery
     func galleryAsscessRequest() {
         PHPhotoLibrary.requestAuthorization { [weak self] result in
             if let _self = self {
@@ -52,13 +54,15 @@ extension ImagePicker {
     }
 }
 
+// MARK :  UIImagePicker datasource and delegates
+
 extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-       // let imageName = "img_\(Date().timeIntervalSince1970)"
+        // Get asset of media and will use this asset to generate thumbnail
         var asset = PHAsset()
         if #available(iOS 11.0, *) {
             if let inAsset =  info[UIImagePickerController.InfoKey.phAsset] as? PHAsset
@@ -74,6 +78,7 @@ extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDe
             }
         }
         
+        // To check whether picked media is image or video
         if let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String {
             
             if mediaType  == "public.image" {

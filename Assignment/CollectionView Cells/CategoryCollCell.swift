@@ -14,6 +14,7 @@ class CategoryCollCell: UICollectionViewCell
     @IBOutlet weak var bottomCategoryLabel: UILabel!
     @IBOutlet weak var centerCategoryLabel: UILabel!
 
+    // boolean to check collection view cell is flipped or not
     var isFlipped = false
     
     func updateView()

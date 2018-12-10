@@ -15,7 +15,7 @@ protocol AttachmentSelectionProtocol: class
     func attachmentEditButtonTapped()
 }
 
-class PostAttachmentCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+class PostAttachmentCell: UITableViewCell
 {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var editButton: UIButton!
@@ -32,6 +32,25 @@ class PostAttachmentCell: UITableViewCell, UICollectionViewDataSource, UICollect
         self.collectionView.register(UINib.init(nibName: Nib.kAttachmentPreviewCell, bundle: nil), forCellWithReuseIdentifier: Identifier.kAttachmentPreviewCell)
     }
     
+    
+    
+    @IBAction func editButtonTapped(sender: UIButton)
+    {
+        self.delegate?.attachmentEditButtonTapped()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}
+
+// MARK : DataSource, Delegates and CollectionViewDelegateFlowLayout of CollectionView
+
+extension PostAttachmentCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return attachmentsArray.count + 1
@@ -81,16 +100,4 @@ class PostAttachmentCell: UITableViewCell, UICollectionViewDataSource, UICollect
             self.delegate?.openImageSelectionSheet()
         }
     }
-    
-    @IBAction func editButtonTapped(sender: UIButton)
-    {
-        self.delegate?.attachmentEditButtonTapped()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

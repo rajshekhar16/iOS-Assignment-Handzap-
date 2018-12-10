@@ -33,9 +33,99 @@ class SingleElementTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    // MARK: Helper Methods
+    
+    /// This function will update counter for remaining characters
+    ///
+    /// - Returns: returns an INT which holds remaining char count
+    private func updateCharacterCount() -> Int {
+        
+        if let text = self.textField.text
+        {
+            let count = 50 - text.count
+            self.lblMessage.text = "\(count) characters left"
+            return count
+        }
+        return 0
+        
+    }
+    
+    
+    
+    
+    
+    
+    /// A function that will call a delegated so that controller class can navigate to category View controller
+    ///
+    /// - Parameter textField: Instnace of UITextField
+    private func setInputViews(_ textField: UITextField) {
+        
+        if textField == self.textField
+        {
+            switch self.tag {
+            case 2:
+                
+                self.endEditing(true)
+                //textField.inputView = UIDatePicker()
+                
+                self.navDelegate?.navigateToCategoryClass(textField: textField)
+                
+                
+                
+                // textField.endEditing(true)
+                
+                break;
+                
+            default:
+                break;
+            }
+            
+        }
+    }
+    
+    /// This function will set place holder text and floating label
+    ///
+    /// - Parameter hidden: A boolean value
+    private func setPlaceHolderForFloatingLabelHide(_ hidden: Bool) {
+        self.lblFloating.isHidden = hidden
+        self.lblFloating.text = self.getPlaceHolderText()
+        self.setPlaceHoldersForFields()
+    }
+    
+    func setPlaceHoldersForFields() {
+        self.textField.placeholder = self.getPlaceHolderText()
+    }
+    
+    /// This function will get placholder text of textFields basis on tags
+    ///
+    /// - Returns: Will return placeholder string
+    func getPlaceHolderText() -> String {
+        var titleText = ""
+        self.imgField.isHidden = false
+        switch self.tag {
+        case 0:
+            titleText = Text.kPostTitle
+            self.imgField.isHidden = true
+            self.imgField.image = nil
+            break;
+        case 2:
+            titleText = Text.kPostCategories
+            self.imgField.image = #imageLiteral(resourceName: "category")
+            break;
+        default:
+            titleText = Text.kSetLocation
+            self.imgField.image = #imageLiteral(resourceName: "ic_place_white")
+            break;
+        }
+        return titleText
+    }
 
 }
 
+
+// MARK: UItextFieldDelegates
 extension SingleElementTableViewCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -83,6 +173,8 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
             if self.tag == 0 {
                 let count = self.updateCharacterCount()
                 
+                
+                // Below code is to check whther backspace is tapped
                 let  char = string.cString(using: String.Encoding.utf8)!
                 let isBackSpace = strcmp(char, "\\b")
                 
@@ -101,82 +193,6 @@ extension SingleElementTableViewCell: UITextFieldDelegate {
     
     }
     
-    
-    
-    /// This function will update counter for remaining characters
-    ///
-    /// - Returns: returns an INT which holds remaining char count
-    private func updateCharacterCount() -> Int {
-        
-        if let text = self.textField.text
-        {
-            let count = 50 - text.count
-            self.lblMessage.text = "\(count) characters left"
-            return count
-        }
-        return 0
-        
-    }
-    
 
-    
-
-    
-    
-    private func setInputViews(_ textField: UITextField) {
-        
-        if textField == self.textField
-        {
-            switch self.tag {
-            case 2:
-                
-                self.endEditing(true)
-                //textField.inputView = UIDatePicker()
-                
-                self.navDelegate?.navigateToCategoryClass(textField: textField)
-
-                
-              
-               // textField.endEditing(true)
-
-                break;
-                
-            default:
-                break;
-            }
-            
-        }
-    }
-    
-    private func setPlaceHolderForFloatingLabelHide(_ hidden: Bool) {
-        self.lblFloating.isHidden = hidden
-        self.lblFloating.text = self.getPlaceHolderText()
-        self.setPlaceHoldersForFields()
-    }
-    
-    func setPlaceHoldersForFields() {
-        self.textField.placeholder = self.getPlaceHolderText()
-    }
-    
-    func getPlaceHolderText() -> String {
-        var titleText = ""
-        self.imgField.isHidden = false
-        switch self.tag {
-        case 0:
-            titleText = "Post Title"
-            self.imgField.isHidden = true
-            self.imgField.image = nil
-            break;
-        case 2:
-            titleText = "Post Categories"
-            self.imgField.image = #imageLiteral(resourceName: "category")
-            break;
-        default:
-            titleText = "Set Location"
-            self.imgField.image = #imageLiteral(resourceName: "ic_place_white")
-            break;
-        }
-        return titleText
-    }
 }
 

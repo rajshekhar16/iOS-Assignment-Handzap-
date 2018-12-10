@@ -12,7 +12,6 @@
 		1A9FCBC721BBF1D700A124B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC521BBF1D700A124B6 /* Main.storyboard */; };
 		1A9FCBC921BBF1D800A124B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCBC821BBF1D800A124B6 /* Assets.xcassets */; };
 		1A9FCBCC21BBF1D800A124B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCBCA21BBF1D800A124B6 /* LaunchScreen.storyboard */; };
-		1A9FCBDA21BBF4D100A124B6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */; };
 		1A9FCC1E21BC5ACB00A124B6 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC1D21BC5ACB00A124B6 /* CategoryViewController.swift */; };
 		1A9FCC2121BC5AFF00A124B6 /* CategoryCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCC2021BC5AFF00A124B6 /* CategoryCollCell.swift */; };
 		1A9FCC2521BC5B5300A124B6 /* CategoryCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9FCC2421BC5B5200A124B6 /* CategoryCollCell.xib */; };
@@ -41,7 +40,6 @@
 		1A9FCBC821BBF1D800A124B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A9FCBCB21BBF1D800A124B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A9FCBCD21BBF1D800A124B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		1A9FCC1D21BC5ACB00A124B6 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1A9FCC2021BC5AFF00A124B6 /* CategoryCollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollCell.swift; sourceTree = "<group>"; };
 		1A9FCC2421BC5B5200A124B6 /* CategoryCollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollCell.xib; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				1A9FCC3121BD0F0100A124B6 /* DescriptionTableCell.swift */,
 				1A9FCC3021BD0F0000A124B6 /* DoubleElementTableViewCell.swift */,
 				1A9FCC3221BD0F0100A124B6 /* SingleElementTableViewCell.swift */,
-				1A9FCBD921BBF4D100A124B6 /* PostTableViewCell.swift */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -350,7 +347,6 @@
 				1A9FCC3521BD0F0100A124B6 /* SingleElementTableViewCell.swift in Sources */,
 				1A9FCC3C21BD49EC00A124B6 /* PostAttachmentCell.swift in Sources */,
 				1A9FCC3421BD0F0100A124B6 /* DescriptionTableCell.swift in Sources */,
-				1A9FCBDA21BBF4D100A124B6 /* PostTableViewCell.swift in Sources */,
 				1A9FCC4621BD4A2B00A124B6 /* ImagePickerDelegate.swift in Sources */,
 				1A9FCC2B21BC67FB00A124B6 /* ToolbarPickerView.swift in Sources */,
 				1A9FCC4021BD4A0900A124B6 /* AttachmentPreviewCell.swift in Sources */,
